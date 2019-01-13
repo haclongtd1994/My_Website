@@ -1,6 +1,5 @@
 
 <?php
-	session_start();
 	include('include/myconnect.php');
 	include('receive_device_id.php');
 
@@ -9,15 +8,6 @@
 			if((isset($_POST["serialnumber"]))
 				&&(isset($_POST["frame"]))
 				&&(isset($_POST["data"]))){
-				$sql_INSERT = "INSERT INTO `device` (";
-				$sql_INSERT = $sql_INSERT."`SERIALNUMBER`,`FRAME`,`DATA`,`DATETIME`) VALUES (";
-				$sql_INSERT = $sql_INSERT."\"".$_POST["serialnumber"]."\",";//dau \" de in ra dau "
-				$sql_INSERT = $sql_INSERT."\"".$_POST["frame"]."\",";
-				$sql_INSERT = $sql_INSERT."\"".$_POST["data"]."\",";
-				$sql_INSERT = $sql_INSERT."\"".$date_time."\")";
-				//thuc thi lenh SQL
-				//echo $sql_INSERT;//ffor test
-				$stmt = $conn->query($sql_INSERT);
 				//echo "INSERT OK";
 				//kiem tra thiet bi co ket noi lan nao den sever chua
 				$sql_SELECT = "SELECT * FROM `device_status` WHERE `SERIALNUMBER` = \"";

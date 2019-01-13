@@ -1,5 +1,4 @@
 <?php
-    session_start();
 	include('include/myconnect.php');
 	if($connect_server == 1){
 		if(isset($_POST['tk'])&&isset($_POST['mk'])){
